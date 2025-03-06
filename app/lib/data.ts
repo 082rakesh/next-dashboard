@@ -17,7 +17,7 @@ export async function fetchRevenue() {
 		// Don't do this in production :)
 
 		console.log('Fetching revenue data...');
-		await new Promise((resolve) => setTimeout(resolve, 3000));
+		await new Promise((resolve) => setTimeout(resolve, 500)); // simulated delay to show loading
 
 		const data = await sql<Revenue[]>`SELECT * FROM revenue`;
 
@@ -31,7 +31,7 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
-	await new Promise((resolve) => setTimeout(resolve, 6000));
+	await new Promise((resolve) => setTimeout(resolve, 500)); // simulated delay to show loading
 
 	try {
 		const data = await sql<LatestInvoiceRaw[]>`
@@ -53,7 +53,7 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
-	await new Promise((resolve) => setTimeout(resolve, 8000));
+	await new Promise((resolve) => setTimeout(resolve, 500)); // simulated delay to show loading
 
 	try {
 		// You can probably combine these into a single SQL query
